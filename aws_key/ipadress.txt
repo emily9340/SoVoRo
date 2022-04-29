@@ -1,0 +1,2 @@
+public ipv4: 13.58.48.132
+public ipv4 DNS: ec2-13-58-48-132.us-east-2.compute.amazonaws.com
