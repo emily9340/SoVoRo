@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/activity_sovoro_main.xml" value="0.1" />
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/sovoro_signin.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/sovoro_signin.xml" value="0.25" />
       </map>
