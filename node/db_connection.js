@@ -1,5 +1,5 @@
-var mysql = require('mysql');
-var config = require('./db_info').real;
+const mysql = require('mysql');
+const config = require('./db_info').real;
 
 module.exports = ()=>{
     return {
