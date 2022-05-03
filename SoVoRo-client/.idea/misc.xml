@@ -4,8 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/activity_sovoro_main.xml" value="0.1" />
-        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/activity_sovoro_signup.xml" value="0.2586050724637681" />
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/activity_sovoro_signup.xml" value="0.1" />
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/sovoro_header.xml" value="0.1" />
         <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/sovoro_signin.xml" value="0.33" />
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/layout/sovoro_toolbar.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/menu/sovoro_drawer.xml" value="0.1" />
+        <entry key="..\:/Users/valtin/Desktop/Project/SoVoRo/SoVoRo-client/app/src/main/res/menu/sovoro_toolbar_menu.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_sovoro_main.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/sovoro_signin.xml" value="0.25" />
