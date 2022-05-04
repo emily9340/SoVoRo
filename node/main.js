@@ -5,6 +5,10 @@ const app = express()
 // 웹서버 포트: 3000
 const port = 3000
 
+// 이더리움 네트워크 연결
+const Web3=require('web3');
+const web3=new Web3(new Web3.providers.HttpProvider('http://13.58.48.132:8445'));
+
 // sql연결 객체 생성
 const mysql_dbc = require('./db_connection')();
 const connection = mysql_dbc.init();
@@ -70,6 +74,14 @@ app.post('/signin', (req,res)=>{
 
     })
 })
+
+// 회원가입 페이지에 대한 리퀘스트 처리
+app.post('./signup',async (req,res)=>{
+    // 이더리움 계정 생성
+    // 생성된 계정에 대한 비밀번호 설정
+    const newAccoount=await web3.eth.personal.newAccount(req.body.password);
+})
+
 // 서버 실행
 app.listen(port, ()=>{
     console.log(`application is listening on port ${port}...`)
