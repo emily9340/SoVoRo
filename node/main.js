@@ -13,12 +13,13 @@ const web3=new Web3(new Web3.providers.HttpProvider('http://13.58.48.132:8445'))
 const mysql_dbc = require('./db_connection')();
 const connection = mysql_dbc.init();
 
+const year = new Date().getFullYear(); // 년도
+const month = new Date().getMonth() + 1;  // 월
+const date = new Date().getDate(); // 일
+const myDay=String(year)+String(month)+String(date);
+
 // 쿠키 저장 모듈
 const cookieParser = require('cookie-parser');
-const cookieConfig = {
-    httpOnly: true,
-    maxAge: 1000000,
-};
 
 // 쿠키 모듈 미들웨어 등록
 app.use(cookieParser());
@@ -76,10 +77,53 @@ app.post('/signin', (req,res)=>{
 })
 
 // 회원가입 페이지에 대한 리퀘스트 처리
-app.post('./signup',async (req,res)=>{
+app.post('/signup',async (req,res)=>{
     // 이더리움 계정 생성
     // 생성된 계정에 대한 비밀번호 설정
     const newAccoount=await web3.eth.personal.newAccount(req.body.password);
+})
+
+// 영단어 10개가 제공되는 메인화면
+app.get('/main',(req,res)=>{
+    // 쿠키 읽기
+    // 만약 dayCookie가 지정되어 있다면
+    if (req.cookies.dayCookie) {
+        // 만약 dayCookie가 오늘 날짜와 다르다면
+        // 하루가 지났음
+        // 새로운 단어를 할당해야 함
+        if(req.cookies.dayCookie!=myDay) {
+            // 기존 날짜 쿠키 삭제
+            res.clearCookie('dayCookie', req.cookies.dayCookie, {
+                httpOnly: true,
+                path: '/main'
+            });
+            // 오늘 날짜로 쿠키 재등록
+            res.cookie('dayCookie', myDay, {
+                // 쿠키 만료일은 현재시각+하루
+                expires: new Date(Date.now() + 86400000),
+                // 웹 서버에서만 접근 가능
+                httpOnly: true,
+                // 쿠키 경로
+                path: '/main'
+            })
+            /*
+            여기에 sql과 연동하여 오늘의 새로운 단어 지정하는 코드
+            */
+        }
+        /*
+        날짜가 같을 경우 새로 지정하지 않음
+         */
+        console.log(req.cookies)
+    }
+    // dayCookie가 없다면 오늘 날짜로 등록
+    else
+    {
+        res.cookie('dayCookie', myDay, {
+            expires: new Date(Date.now() + 86400000),
+            httpOnly: true,
+            path: '/main'
+        })
+    }
 })
 
 // 서버 실행
