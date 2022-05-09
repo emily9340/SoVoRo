@@ -14,8 +14,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class SoVoRoMain extends AppCompatActivity {
-
+public class SoVoRoComment extends AppCompatActivity {
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
@@ -38,13 +37,12 @@ public class SoVoRoMain extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sovoro_main);
+        setContentView(R.layout.activity_sovoro_comment);
 
-        toolbar = (Toolbar) findViewById(R.id.sovoro_main_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.sovoro_comment_toolbar);
         setSupportActionBar(toolbar);
         // 왼쪽 메뉴바 삽입
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -52,8 +50,7 @@ public class SoVoRoMain extends AppCompatActivity {
         // 타이틀 제거
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        drawer=findViewById(R.id.sovoro_main_drawer);
+        drawer=findViewById(R.id.sovoro_comment_drawer);
         navigationView=findViewById(R.id.sovoro_main_drawer_view);
-        
     }
 }
