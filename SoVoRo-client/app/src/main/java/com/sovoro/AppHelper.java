@@ -2,8 +2,9 @@ package com.sovoro;
 
 import android.content.Context;
 
-import com.android.volley.*;
-import com.android.volley.toolbox.*;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 // 프로젝트 내부 중복되는 작업들을 위한 정적 메소드들이 포함된 클래스
 public class AppHelper {
@@ -14,7 +15,7 @@ public class AppHelper {
     public static String URL="http://13.58.48.132:3000";
     // 특정 액티비티를 리퀘스트 큐에 등록
     static void setRequestQueue(Context context) {
-        requestQueue=Volley.newRequestQueue(context);
+        requestQueue= Volley.newRequestQueue(context);
     }
     // 리퀘스트 큐 객체 반환
     static RequestQueue getRequestQueue() {

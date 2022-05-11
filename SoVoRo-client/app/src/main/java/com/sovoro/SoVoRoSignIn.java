@@ -5,17 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.Toast;
 
-import com.android.volley.*;
-import com.android.volley.toolbox.*;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 // 로그인 화면 액티비티
-public class SoVoRoSignIn extends AppCompatActivity {
+public class SoVoRoSignin extends AppCompatActivity {
 
     // 레이아웃 객체
     // 텍스트 입력 외부 래아아웃
@@ -74,8 +79,8 @@ public class SoVoRoSignIn extends AppCompatActivity {
                         switch (response) {
                             case "0": // 인증 성공
                                 // Main페이지로 넘어가는 intent
-                                Intent intent = new Intent(getApplicationContext(), SoVoRoMain.class);
-                                startActivity(intent);
+                                //Intent intent = new Intent(getApplicationContext(), SoVoRoMain.class);
+                                //startActivity(intent);
                                 break;
                             case "-1": // 인증 실패
                                 // id와 password를 빈칸으로 초기화
@@ -117,7 +122,7 @@ public class SoVoRoSignIn extends AppCompatActivity {
                 // id혹은 passwordc창이 비어있다는 에러 메세지 팝업
                 if(sovoroIdText.getText().toString().isEmpty()||sovoroPasswordText.getText().toString().isEmpty())
                     Toast.makeText(getApplicationContext(),"ID or Password is empty",Toast.LENGTH_LONG).show();
-                // id와 password입력창에 값이 있다면 리퀘스트 송신
+                    // id와 password입력창에 값이 있다면 리퀘스트 송신
                 else
                     AppHelper.requestQueueAdd(stringRequest,"STRING");
             }

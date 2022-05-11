@@ -35,3 +35,4 @@ public class SoVoRoCommentInfo {
         this.userCommentLikesCount = userCommentLikesCount;
     }
 }
+

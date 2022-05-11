@@ -9,7 +9,7 @@ import android.widget.Button;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class SoVoRoSignUp extends AppCompatActivity {
+public class SoVoRoSignup extends AppCompatActivity {
 
     // 입력 레이아웃 외부
     private TextInputLayout sovoroSignUpIdLayout;
@@ -52,8 +52,8 @@ public class SoVoRoSignUp extends AppCompatActivity {
         sovoroSignUpIdLayout=findViewById(R.id.sovoro_signup_id_layout);
         sovoroSignUpPasswordLayout=findViewById(R.id.sovoro_signup_password_layout);
         sovoroSignUpNickNameLayout=findViewById(R.id.sovoro_signup_nickname_layout);
-        sovoroSignUpSmsInputLayout=findViewById(R.id.sovoro_signup_sms_layout);
-        sovoroSignUpSmsConfirmLayout=findViewById(R.id.sovoro_signup_sms_confirm_layout);
+        sovoroSignUpSmsInputLayout=findViewById(R.id.sovoro_signup_sms_layout_inner);
+        sovoroSignUpSmsConfirmLayout=findViewById(R.id.sovoro_signup_sms_confirm_layout_inner);
 
         // 입력 레이아웃 내부
         sovoroSignUpId=findViewById(R.id.sovoro_signup_id);
@@ -67,7 +67,7 @@ public class SoVoRoSignUp extends AppCompatActivity {
         // SMS 인증번호 확인 버튼
         sovoroSignUpSmsConfirmButton=findViewById(R.id.sovoro_signup_sms_confirm);
         // 회원가입 버튼
-        sovoroSignUp=findViewById(R.id.sovoro_signup_sms_confirm_layout);
+        sovoroSignUp=findViewById(R.id.sovoro_signup);
 
 
         // sms인증

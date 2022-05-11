@@ -54,6 +54,6 @@ public class SoVoRoMain extends AppCompatActivity {
 
         drawer=findViewById(R.id.sovoro_main_drawer);
         navigationView=findViewById(R.id.sovoro_main_drawer_view);
-        
+
     }
 }
