@@ -43,6 +43,7 @@
                 android:maxLines="1"
                 />
             <Button
+                android:id="@+id/sovoro_comment_submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toRightOf="@id/sovoro_comment_input"
@@ -50,6 +51,7 @@
                 android:text="submit"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/sovoro_comment_user_submit_layout"
