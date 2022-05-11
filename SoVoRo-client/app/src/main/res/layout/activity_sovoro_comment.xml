@@ -56,6 +56,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginTop="30dp"
+            android:id="@+id/sovoro_comments"
+            android:scrollbars="vertical"
             />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
