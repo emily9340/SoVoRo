@@ -27,9 +27,9 @@ public class SoVoRoWordAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         int index = getRealPosition(position);
         switch (index) {
-            case 1:
+            case 0:
                 return SoVoRoWordFragment1.newInstance("1","a");
-            case 2:
+            case 1:
                 return SoVoRoWordFragment2.newInstance("2","b");
         }
         return null;
@@ -37,7 +37,7 @@ public class SoVoRoWordAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 2000;
     }
     public int getRealPosition(int position) { return position % mCount; }
 }
