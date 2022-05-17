@@ -37,10 +37,16 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     // https://mvnrepository.com/artifact/com.android.volley/volley
     implementation group: 'com.android.volley', name: 'volley', version: '1.2.1'
+
     // https://mvnrepository.com/artifact/androidx.viewpager2/viewpager2
     implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
-
     // https://mvnrepository.com/artifact/me.relex/circleindicator
     implementation 'me.relex:circleindicator:2.1.6'
+
+    // https://mvnrepository.com/artifact/com.github.prolificinteractive/material-calendarview
+    implementation group: 'com.github.prolificinteractive', name: 'material-calendarview', version: '2.0.0'
+    // https://mvnrepository.com/artifact/com.jakewharton.threetenabp/threetenabp
+    implementation group: 'com.jakewharton.threetenabp', name: 'threetenabp', version: '1.4.0'
+
 
 }

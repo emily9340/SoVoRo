@@ -3,49 +3,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/sovoro_main_drawer">
+    android:id="@+id/sovoro_calendar_drawer">
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SoVoRoMain">
+        tools:context=".SoVoRoAttendanceCalendar">
         <include
             layout="@layout/sovoro_toolbar"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/sovoro_main_toolbar"
+            android:id="@+id/sovoro_calendar_toolbar"
             />
-        <FrameLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/sovoro_main_toolbar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/sovoro_main_frame"
-            >
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/sovoro_main_viewpager"
-                android:clipToPadding="false"
-                android:clipChildren="false"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
-
-            <me.relex.circleindicator.CircleIndicator3
-                android:id="@+id/sovoro_main_indicator"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="bottom"/>
-
-        </FrameLayout>
-
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sovoro_calendar_toolbar"
+            android:id="@+id/sovoro_calendar"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/sovoro_main_drawer_view"
+        android:id="@+id/sovoro_calendar_drawer_view"
         android:layout_gravity="start"
         app:menu="@menu/sovoro_drawer"
         app:headerLayout="@layout/sovoro_header"

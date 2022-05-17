@@ -18,7 +18,7 @@
         />
     <item
         android:id="@+id/sovoro_wordbook"
-        android:title="내 단어장"
+        android:title="단어 한마디"
         app:showAsAction="always"
         />
 </menu>

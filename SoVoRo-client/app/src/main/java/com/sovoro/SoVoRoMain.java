@@ -17,11 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
+import com.sovoro.wordview.SoVoRoWordAdapter;
 
 import me.relex.circleindicator.CircleIndicator3;
 
 public class SoVoRoMain extends AppCompatActivity {
 
+    // 툴바 관련 객체
     private Toolbar toolbar;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
@@ -30,7 +32,7 @@ public class SoVoRoMain extends AppCompatActivity {
     // 뷰페이저
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
-    private int num_page = 2;
+    private int num_page = 10;
     private CircleIndicator3 mIndicator;
 
     @Override
@@ -57,6 +59,8 @@ public class SoVoRoMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sovoro_main);
 
+
+        /**툴바 관련 코드**/
         toolbar = (Toolbar) findViewById(R.id.sovoro_main_toolbar);
         setSupportActionBar(toolbar);
         // 왼쪽 메뉴바 삽입
@@ -68,6 +72,8 @@ public class SoVoRoMain extends AppCompatActivity {
         drawer=findViewById(R.id.sovoro_main_drawer);
         navigationView=findViewById(R.id.sovoro_main_drawer_view);
 
+
+        /**뷰페이저 관련 코드**/
         //ViewPager2
         mPager = findViewById(R.id.sovoro_main_viewpager);
         //Adapter
@@ -80,7 +86,7 @@ public class SoVoRoMain extends AppCompatActivity {
         //ViewPager Setting
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         mPager.setCurrentItem(1000);
-        mPager.setOffscreenPageLimit(3);
+        mPager.setOffscreenPageLimit(10);
 
         mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
