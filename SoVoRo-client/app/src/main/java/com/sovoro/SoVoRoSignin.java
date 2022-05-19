@@ -79,8 +79,8 @@ public class SoVoRoSignin extends AppCompatActivity {
                         switch (response) {
                             case "0": // 인증 성공
                                 // Main페이지로 넘어가는 intent
-                                //Intent intent = new Intent(getApplicationContext(), SoVoRoMain.class);
-                                //startActivity(intent);
+                                Intent intent = new Intent(getApplicationContext(), SoVoRoMain.class);
+                                startActivity(intent);
                                 break;
                             case "-1": // 인증 실패
                                 // id와 password를 빈칸으로 초기화

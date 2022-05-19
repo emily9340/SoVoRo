@@ -17,7 +17,7 @@
         app:showAsAction="always"
         />
     <item
-        android:id="@+id/sovoro_wordbook"
+        android:id="@+id/sovoro_word_comment"
         android:title="단어 한마디"
         app:showAsAction="always"
         />
