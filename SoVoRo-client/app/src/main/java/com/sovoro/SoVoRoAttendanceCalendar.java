@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -56,7 +57,38 @@ public class SoVoRoAttendanceCalendar extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         drawer=findViewById(R.id.sovoro_calendar_drawer);
+
+        /**네비게이션뷰 관련 코드**/
         navigationView=findViewById(R.id.sovoro_calendar_drawer_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                menuItem.setChecked(true);
+                drawer.closeDrawers();
+                Intent intent;
+                int id = menuItem.getItemId();
+                String title = menuItem.getTitle().toString();
+                switch (menuItem.getItemId()) {
+                    case R.id.sovoro_word_view:
+                        intent = new Intent(getApplicationContext(), SoVoRoMain.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.sovoro_word_test:
+                        intent = new Intent(getApplicationContext(), SoVoRoTest.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.sovoro_calendar:
+                        intent = new Intent(getApplicationContext(), SoVoRoAttendanceCalendar.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.sovoro_word_comment:
+                        intent = new Intent(getApplicationContext(), SoVoRoComment.class);
+                        startActivity(intent);
+                        break;
+                }
+                return true;
+            }
+        });
 
 
         MaterialCalendarView calendarView=findViewById(R.id.sovoro_calendar);
