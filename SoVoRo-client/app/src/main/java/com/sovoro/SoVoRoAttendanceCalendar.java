@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,6 +24,10 @@ public class SoVoRoAttendanceCalendar extends AppCompatActivity {
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
+
+    private FragmentManager fragmentManager;
+    private SoVoRoCalendarContent sovoroCalendarContent;
+    private FragmentTransaction transaction;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,5 +98,11 @@ public class SoVoRoAttendanceCalendar extends AppCompatActivity {
 
 
         MaterialCalendarView calendarView=findViewById(R.id.sovoro_calendar);
+        fragmentManager = getSupportFragmentManager();
+
+        sovoroCalendarContent = new SoVoRoCalendarContent();
+
+        transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.sovoro_calendar_contnent, sovoroCalendarContent).commitAllowingStateLoss();
     }
 }

@@ -25,6 +25,14 @@
             app:layout_constraintTop_toBottomOf="@+id/sovoro_calendar_toolbar"
             android:id="@+id/sovoro_calendar"
             />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sovoro_calendar_contnent"
+            app:layout_constraintTop_toBottomOf="@id/sovoro_calendar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
