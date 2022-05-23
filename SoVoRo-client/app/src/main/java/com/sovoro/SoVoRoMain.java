@@ -149,7 +149,6 @@ public class SoVoRoMain extends AppCompatActivity {
         final float pageOffset = getResources().getDimensionPixelOffset(R.dimen.offset);
 
         mPager.setPageTransformer(new ViewPager2.PageTransformer() {
-
             @Override
             public void transformPage(@NonNull View page, float position) {
                 float myOffset = position * -(2 * pageOffset + pageMargin);
