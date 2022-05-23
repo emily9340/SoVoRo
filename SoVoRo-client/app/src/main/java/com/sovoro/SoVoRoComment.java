@@ -109,6 +109,7 @@ public class SoVoRoComment extends AppCompatActivity {
                 alist.add(sovoRoCommentInfo);
                 SoVoRoCommentAdapter sovoroCommentAdapter =new SoVoRoCommentAdapter(alist);
                 sovoroComments.setAdapter(sovoroCommentAdapter);
+                sovoroCommentInput.setText("");
             }
         });
 

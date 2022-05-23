@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +24,8 @@ public class SoVoRoCalendarContent extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView setResult;
 
     public SoVoRoCalendarContent() {
         // Required empty public constructor
@@ -59,6 +62,12 @@ public class SoVoRoCalendarContent extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sovoro_canlendar_content, container, false);
+        View view=inflater.inflate(R.layout.fragment_sovoro_canlendar_content, container, false);
+        setResult=view.findViewById(R.id.sovoro_calendar_result_2);
+        return view;
+    }
+
+    public void setResult(String str) {
+        setResult.setText(str);
     }
 }
