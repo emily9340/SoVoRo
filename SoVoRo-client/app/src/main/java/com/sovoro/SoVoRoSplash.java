@@ -27,7 +27,7 @@ public class SoVoRoSplash extends AppCompatActivity {
                 finish();
             }
             // 스플래시 스크린 타임 2초(ms단위)
-        }, 2000);
+        }, 3000);
 
     }
 }

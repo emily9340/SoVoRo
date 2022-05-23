@@ -120,9 +120,9 @@ public class SoVoRoMain extends AppCompatActivity {
         pagerAdapter = new SoVoRoWordAdapter(this, num_page);
         mPager.setAdapter(pagerAdapter);
         //Indicator
-        mIndicator = findViewById(R.id.sovoro_main_indicator);
-        mIndicator.setViewPager(mPager);
-        mIndicator.createIndicators(num_page,0);
+//        mIndicator = findViewById(R.id.sovoro_main_indicator);
+//        mIndicator.setViewPager(mPager);
+//        mIndicator.createIndicators(num_page,0);
         //ViewPager Setting
         mPager.setOrientation(ViewPager2.ORIENTATION_HORIZONTAL);
         mPager.setCurrentItem(1000);
@@ -139,7 +139,7 @@ public class SoVoRoMain extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
-                mIndicator.animatePageSelected(position%num_page);
+                //mIndicator.animatePageSelected(position%num_page);
             }
 
         });

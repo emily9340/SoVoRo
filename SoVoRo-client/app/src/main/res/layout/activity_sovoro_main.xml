@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sovoro_main_drawer">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".SoVoRoMain">
@@ -17,28 +16,19 @@
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/sovoro_main_toolbar"
             />
+
         <FrameLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintTop_toBottomOf="@+id/sovoro_main_toolbar"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/sovoro_main_frame"
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            app:layout_constraintTop_toBottomOf="@id/sovoro_main_toolbar"
             >
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/sovoro_main_viewpager"
-                android:clipToPadding="false"
-                android:clipChildren="false"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                />
-
-            <me.relex.circleindicator.CircleIndicator3
-                android:id="@+id/sovoro_main_indicator"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_gravity="bottom"/>
-
+                android:clipChildren="false"
+                android:clipToPadding="false" />
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

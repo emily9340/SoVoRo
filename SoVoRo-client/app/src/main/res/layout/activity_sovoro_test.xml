@@ -17,6 +17,18 @@
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/sovoro_test_toolbar"
             />
+        <FrameLayout
+            android:id="@+id/sovoro_test_frame"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            app:layout_constraintTop_toBottomOf="@id/sovoro_test_toolbar">
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/sovoro_test_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false" />
+        </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
