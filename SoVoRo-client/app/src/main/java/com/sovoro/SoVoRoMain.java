@@ -37,6 +37,7 @@ public class SoVoRoMain extends AppCompatActivity {
     private int num_page = 10;
     private CircleIndicator3 mIndicator;
 
+    /**상단메뉴 관련 메소드**/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //return super.onCreateOptionsMenu(menu);
@@ -44,10 +45,11 @@ public class SoVoRoMain extends AppCompatActivity {
         menuInflater.inflate(R.menu.sovoro_toolbar_menu, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
+            /**상단 메뉴 버튼 클릭**/
+            /**case를 통해 옵션-현재 미구현-**/
             case android.R.id.home:{ // 왼쪽 상단 버튼 눌렀을 때
                 drawer.openDrawer(GravityCompat.START);
                 return true;
@@ -76,6 +78,7 @@ public class SoVoRoMain extends AppCompatActivity {
         /**네비게이션뷰 관련 코드**/
         navigationView=findViewById(R.id.sovoro_main_drawer_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            // 네비게이션뷰 선택 이벤트 처리
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 menuItem.setChecked(true);
@@ -84,24 +87,29 @@ public class SoVoRoMain extends AppCompatActivity {
                 int id = menuItem.getItemId();
                 String title = menuItem.getTitle().toString();
                 switch (menuItem.getItemId()) {
+                    // 단어 학습 창-main-으로 이동
                     case R.id.sovoro_word_view:
                         intent = new Intent(getApplicationContext(), SoVoRoMain.class);
                         startActivity(intent);
                         break;
+                    // 단어 테스트 창으로 이동
                     case R.id.sovoro_word_test:
                         intent = new Intent(getApplicationContext(), SoVoRoTest.class);
                         startActivity(intent);
                         break;
+                    // 출석부 창으로 이동
                     case R.id.sovoro_calendar:
                         intent = new Intent(getApplicationContext(), SoVoRoAttendanceCalendar.class);
                         startActivity(intent);
                         break;
+                    // 단어 한마디 창으로 이동
                     case R.id.sovoro_word_comment:
                         intent = new Intent(getApplicationContext(), SoVoRoComment.class);
                         startActivity(intent);
                         break;
                 }
-                return true;
+                // 만약 err state라면 false return
+                return false;
             }
         });
 
@@ -128,7 +136,6 @@ public class SoVoRoMain extends AppCompatActivity {
                     mPager.setCurrentItem(position);
                 }
             }
-
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);

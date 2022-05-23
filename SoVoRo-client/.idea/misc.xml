@@ -34,7 +34,10 @@
         <entry key="app/src/main/res/layout/activity_sovoro_attendance_calendar.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_sovoro_comment.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_sovoro_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_sovoro_splash.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_sovoro_test.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_sovoro_canlendar_content.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_sovoro_test1.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_sovoro_word1.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_sovoro_word2.xml" value="0.19610507246376813" />
       </map>
