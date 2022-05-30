@@ -30,6 +30,16 @@ contract Main {
     function getAddressBalance(address _address) public view returns(uint) {
         return _address.balance;
     }
+    function makeRandNumFromOneToN(uint n,uint nounce) internal view returns(uint) {
+        return uint(keccak256(abi.encodePacked(block.timestamp,block.difficulty,nounce)))%n+1;
+    }
+    function makeRandArray() external view returns(uint[] memory) {
+        uint[] memory randArray=new uint[](10);
+        for(uint i=0;i<10;i++) {
+            randArray[i]=makeRandNumFromOneToN(4500,i);
+        }
+        return randArray;
+    }
     modifier isCorrectValue(uint value) {
         require(value==msg.value,"incorrect value");
         _;

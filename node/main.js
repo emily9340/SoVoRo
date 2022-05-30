@@ -1,3 +1,6 @@
+// 파일 입출력 모듈 fs
+const fs=require('fs')
+
 // 웹서버 모듈 nodejs express사용
 const express = require('express')
 const app = express()
@@ -5,9 +8,33 @@ const app = express()
 // 웹서버 포트: 3000
 const port = 3000
 
+/**이더리움 네트워크 관련 구**/
 // 이더리움 네트워크 연결
-const Web3=require('web3');
-const web3=new Web3(new Web3.providers.HttpProvider('http://13.58.48.132:8445'));
+const Web3=require('web3')
+const wsProvider=new Web3.providers.WebsocketProvider('ws://13.58.48.132:8445')
+const httpProvider=new Web3.providers.HttpProvider('http://13.58.48.132:8445')
+
+// ws로 네트워크 연결
+const web3=new Web3(wsProvider)
+
+// deploy 정보
+const deployInfo=require('./MainDeploy.json')
+const contractNames=Object.keys(deployInfo.contracts)
+const contractName=contractNames[0]
+const abi=deployInfo.contracts[contractName].abi
+const bin=deployInfo.contracts[contractName].bin
+
+// contract정보
+const contractInfo=require('./MainContract.json')
+const contractAddress=contractInfo.contractAddress
+
+const deploy=new web3.eth.Contract(abi).deploy({data:'0x'+bin})
+const contract=new web3.eth.Contract(abi,contractAddress)
+
+const getRandArraySample=async ()=>{
+    const randArray=await contract.methods.makeRandArray().call();
+    //process.exit(1)
+}
 
 // sql연결 객체 생성
 const mysql_dbc = require('./db_connection')();
