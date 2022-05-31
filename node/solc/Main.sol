@@ -30,13 +30,13 @@ contract Main {
     function getAddressBalance(address _address) public view returns(uint) {
         return _address.balance;
     }
-    function makeRandNumFromOneToN(uint n,uint nounce) internal view returns(uint) {
-        return uint(keccak256(abi.encodePacked(block.timestamp,block.difficulty,nounce)))%n+1;
+    function makeRandNumFromOneToN(uint n,uint nounce_1,uint nounce_2) internal view returns(uint) {
+        return uint(keccak256(abi.encodePacked(block.timestamp+nounce_1+nounce_2,block.difficulty)))%n+1;
     }
-    function makeRandArray() external view returns(uint[] memory) {
+    function makeRandArray(uint nounce) external view returns(uint[] memory) {
         uint[] memory randArray=new uint[](10);
         for(uint i=0;i<10;i++) {
-            randArray[i]=makeRandNumFromOneToN(4500,i);
+            randArray[i]=makeRandNumFromOneToN(4500,i,nounce);
         }
         return randArray;
     }
@@ -44,7 +44,7 @@ contract Main {
         require(value==msg.value,"incorrect value");
         _;
     }
-    modifier isOwne() {
+    modifier isOwner() {
         require(msg.sender==owner,"message sender is not owner");
         _;
     }

@@ -18,9 +18,18 @@ const deploy=new web3.eth.Contract(abi).deploy({
 })
 const contract=new web3.eth.Contract(abi,contractAddress)
 
-const use=async ()=>{
-    const randArray=await contract.methods.makeRandArray().call();
-    process.exit(1)
+const getRandArray=async ()=>{
+    const nounce=Math.floor(Math.random()*5000)
+    return await contract.methods.makeRandArray(nounce).call();
 }
 
-use()
+const makeRandIdxArray=async ()=>{
+    let idxArray=[];
+    idxArray.push(await getRandArray())
+    idxArray.push(await getRandArray())
+    idxArray.push(await getRandArray())
+    idxArray.push(await getRandArray())
+    return idxArray
+}
+
+makeRandIdxArray()

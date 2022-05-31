@@ -31,9 +31,20 @@ const contractAddress=contractInfo.contractAddress
 const deploy=new web3.eth.Contract(abi).deploy({data:'0x'+bin})
 const contract=new web3.eth.Contract(abi,contractAddress)
 
-const getRandArraySample=async ()=>{
-    const randArray=await contract.methods.makeRandArray().call();
-    //process.exit(1)
+// 10개의 수를 가져오는 랜덤 1차원 배열 생성
+const getRandArray=async ()=>{
+    const nounce=Math.floor(Math.random()*5000)
+    return await contract.methods.makeRandArray(nounce).call();
+}
+
+// [4][10]의 랜덤 2차원 배열 생성
+const makeRandIdxArray=async ()=>{
+    let idxArray=[];
+    idxArray.push(await getRandArray())
+    idxArray.push(await getRandArray())
+    idxArray.push(await getRandArray())
+    idxArray.push(await getRandArray())
+    return idxArray
 }
 
 // sql연결 객체 생성
@@ -44,6 +55,9 @@ const year = new Date().getFullYear(); // 년도
 const month = new Date().getMonth() + 1;  // 월
 const date = new Date().getDate(); // 일
 const myDay=String(year)+String(month)+String(date);
+
+// 랜덤 단어 인덱스 배열
+let randArray=new Object()
 
 // 쿠키 저장 모듈
 const cookieParser = require('cookie-parser');
@@ -76,7 +90,6 @@ app.post('/signin', (req,res)=>{
     // req.body는 post로 들어온 정보
     // map형식으로 보내졌다
     // JsonObject형식으로 사용 가능하다
-
     // id는 해당 리퀘스트(req)의 몸체(body)의 아이디(userid) 값
     const userid=req.body.userid;
     const password=req.body.password;
@@ -111,7 +124,8 @@ app.post('/signup',async (req,res)=>{
 })
 
 // 영단어 10개가 제공되는 메인화면
-app.get('/main',(req,res)=>{
+app.get('/main',async (req,res)=>{
+
     // 쿠키 읽기
     // 만약 dayCookie가 지정되어 있다면
     if (req.cookies.dayCookie) {
@@ -133,6 +147,10 @@ app.get('/main',(req,res)=>{
                 // 쿠키 경로
                 path: '/main'
             })
+            randArray["dailyWordsIndex"]=await getRandArray()
+            randArray["wordTestIdx1"]=await getRandArray()
+            randArray["wordTestIdx2"]=await getRandArray()
+            randArray["wordTestIdx3"]=await getRandArray()
             /*
             여기에 sql과 연동하여 오늘의 새로운 단어 지정하는 코드
             */
