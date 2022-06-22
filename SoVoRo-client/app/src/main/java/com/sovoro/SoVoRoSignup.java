@@ -5,25 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class SoVoRoSignup extends AppCompatActivity {
 
-    // 입력 레이아웃 외부
-    private TextInputLayout sovoroSignUpIdLayout;
-    private TextInputLayout sovoroSignUpPasswordLayout;
-    private TextInputLayout sovoroSignUpNickNameLayout;
-    private TextInputLayout sovoroSignUpSmsInputLayout;
-    private TextInputLayout sovoroSignUpSmsConfirmLayout;
-
     // 입력 레이아웃 내부
-    private TextInputEditText sovoroSignUpId;
-    private TextInputEditText sovoroSignUpPassword;
-    private TextInputEditText sovoroSignUpNickName;
-    private TextInputEditText sovoroSignUpSmsInput;
-    private TextInputEditText sovoroSignUpSmsConfirm;
+    private EditText sovoroSignUpId;
+    private EditText sovoroSignUpPassword;
+    private EditText sovoroSignUpNickName;
+    private EditText sovoroSignUpSmsInput;
+    private EditText sovoroSignUpSmsConfirm;
 
     // SMS발송 버튼
     private Button sovoroSignUpSmsSendButton;
@@ -48,12 +42,6 @@ public class SoVoRoSignup extends AppCompatActivity {
         final String URL=AppHelper.getURL(PATH);
 
         // xml레이아웃과 자바 코드의 연결
-        // 입력 레이아웃 외부
-        sovoroSignUpIdLayout=findViewById(R.id.sovoro_signup_id_layout);
-        sovoroSignUpPasswordLayout=findViewById(R.id.sovoro_signup_password_layout);
-        sovoroSignUpNickNameLayout=findViewById(R.id.sovoro_signup_nickname_layout);
-        sovoroSignUpSmsInputLayout=findViewById(R.id.sovoro_signup_sms_layout_inner);
-        sovoroSignUpSmsConfirmLayout=findViewById(R.id.sovoro_signup_sms_confirm_layout_inner);
 
         // 입력 레이아웃 내부
         sovoroSignUpId=findViewById(R.id.sovoro_signup_id);

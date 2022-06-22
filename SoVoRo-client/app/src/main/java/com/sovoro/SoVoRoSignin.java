@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -23,13 +24,10 @@ import java.util.Map;
 public class SoVoRoSignin extends AppCompatActivity {
 
     // 레이아웃 객체
-    // 텍스트 입력 외부 래아아웃
-    private TextInputLayout sovoroId;
-    private TextInputLayout sovoroPassword;
     // 텍스트 입력 내부 레이아웃
     // 실제 텍스트 입력 부분
-    private TextInputEditText sovoroIdText;
-    private TextInputEditText sovoroPasswordText;
+    private EditText sovoroIdText;
+    private EditText sovoroPasswordText;
     // 버튼 레이아웃
     private Button sovoroSignIn;
     private Button sovoroSignUp;
@@ -50,8 +48,6 @@ public class SoVoRoSignin extends AppCompatActivity {
         final String URL=AppHelper.getURL(PATH);
 
         // xml레이아웃과 자바 코드의 연결
-        sovoroId=findViewById(R.id.sovoro_id_layout);
-        sovoroPassword=findViewById(R.id.sovoro_password_layout);
         sovoroSignIn=findViewById(R.id.sovoro_signin);
         sovoroSignUp=findViewById(R.id.sovoro_signup);
         sovoroIdText=findViewById(R.id.sovoro_id);
